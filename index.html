@@ -4,21 +4,439 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="5psM2cP_edBLrQk06yRjOZQbfEOt4QIpe4GjxoWLhUU">
-  <meta name="description" content="Open Future Forum publishes executive research, datasets, market maps, and resources for executive communities and leaders.">
+  <meta name="description" content="Open Future Forum publishes executive research, open datasets, market maps, and practical resources for leaders and executive communities.">
+  <meta name="theme-color" content="#101828">
   <link rel="canonical" href="https://openfutureforum.github.io/">
   <title>Open Future Forum Research and Resources</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #101828;
+      --muted: #475467;
+      --line: #d0d5dd;
+      --soft: #f2f4f7;
+      --paper: #ffffff;
+      --accent: #155eef;
+      --accent-dark: #004eeb;
+      --mint: #d1fadf;
+      --mint-ink: #05603a;
+      --amber: #fef0c7;
+      --amber-ink: #7a2e0e;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    a:focus-visible {
+      outline: 3px solid #84adff;
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .wrap {
+      width: min(calc(100% - 40px), var(--max));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 750;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a { text-decoration: none; }
+    .nav-links a:hover { color: var(--accent); }
+
+    .hero {
+      padding: 86px 0 72px;
+      background:
+        radial-gradient(circle at 82% 12%, rgba(132, 173, 255, 0.28), transparent 28rem),
+        linear-gradient(180deg, #f8faff 0%, #ffffff 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--accent-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 { line-height: 1.14; letter-spacing: -0.035em; }
+
+    h1 {
+      max-width: 850px;
+      margin: 0;
+      font-size: clamp(2.65rem, 7vw, 5.5rem);
+      font-weight: 780;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.08rem, 2.2vw, 1.35rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 10px 18px;
+      border: 1px solid var(--ink);
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .button.primary {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .button:hover { transform: translateY(-1px); }
+    .button.primary:hover { background: var(--accent-dark); }
+
+    section { padding: 72px 0; }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 3.15rem);
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      display: flex;
+      min-height: 290px;
+      flex-direction: column;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--paper);
+      box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+    }
+
+    .card:hover {
+      border-color: #84adff;
+      box-shadow: 0 14px 36px rgba(16, 24, 40, 0.08);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .number {
+      color: #98a2b3;
+      font-size: 0.86rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--mint);
+      color: var(--mint-ink);
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .badge.source {
+      background: var(--amber);
+      color: var(--amber-ink);
+    }
+
+    h3 {
+      margin: 24px 0 12px;
+      font-size: 1.55rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: auto;
+      padding-top: 28px;
+      font-weight: 750;
+    }
+
+    .card-links a { text-underline-offset: 4px; }
+    .card-links a:hover { color: var(--accent); }
+
+    .principles {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .principles .section-heading p { color: #d0d5dd; }
+
+    .principle-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 30px;
+    }
+
+    .principle-grid h3 { margin: 0 0 10px; font-size: 1.15rem; }
+    .principle-grid p { margin: 0; color: #d0d5dd; }
+
+    .repo-list {
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid var(--line);
+      list-style: none;
+    }
+
+    .repo-list li {
+      display: grid;
+      grid-template-columns: 1.15fr 2fr auto;
+      gap: 24px;
+      align-items: center;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .repo-list strong { letter-spacing: -0.015em; }
+    .repo-list span { color: var(--muted); }
+    .repo-list a { color: var(--accent-dark); font-weight: 750; text-underline-offset: 4px; }
+
+    footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    footer p { margin: 0; }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(calc(100% - 28px), var(--max)); }
+      .nav { align-items: flex-start; padding: 18px 0; }
+      .nav-links { align-items: flex-end; flex-direction: column; gap: 6px; }
+      .hero { padding: 64px 0 56px; }
+      section { padding: 56px 0; }
+      .cards, .principle-grid { grid-template-columns: 1fr; }
+      .repo-list li { grid-template-columns: 1fr; gap: 6px; }
+      .card { min-height: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button:hover { transform: none; }
+    }
+  </style>
 </head>
 <body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="/">Open Future Forum</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#projects">Research and resources</a>
+        <a href="#repositories">Repository directory</a>
+        <a href="https://openfutureforum.com/">OpenFutureForum.com</a>
+      </nav>
+    </div>
+  </header>
+
   <main>
-    <h1>Open Future Forum Research and Resources</h1>
-    <p>Open Future Forum is a global executive community founded in Silicon Valley. It publishes original research, datasets, market maps, and practical resources for executive communities and leaders.</p>
-    <ul>
-      <li><a href="/executive-communities-index/">Executive Communities Index</a></li>
-      <li><a href="/executive-community-playbook/">Executive Community Playbook</a></li>
-      <li><a href="https://github.com/OpenFutureForum/executive-intelligence-index">Executive Intelligence Index</a></li>
-      <li><a href="https://github.com/OpenFutureForum/executive-ai-research">Executive AI Research</a></li>
-      <li><a href="https://openfutureforum.com/">OpenFutureForum.com</a></li>
-    </ul>
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Open research for executive decision-making</p>
+        <h1>Evidence, maps and practical tools for executive leaders.</h1>
+        <p class="hero-copy">Open Future Forum is a global executive community founded in Silicon Valley. We publish original research, open datasets, market maps and practical resources for leaders and executive communities.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">Explore the projects</a>
+          <a class="button" href="https://github.com/OpenFutureForum">View the GitHub organization</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-heading">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Published projects</p>
+          <h2 id="projects-heading">Research and resources</h2>
+          <p>Each project links to its public reading experience where one exists, with the underlying repository available for provenance and reuse.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-top"><span class="number">01</span><span class="badge">Public website</span></div>
+            <h3>CXO Ecosystem Index</h3>
+            <p>A structured view of companies, communities, advisors and resources serving leaders across the C-suite.</p>
+            <div class="card-links">
+              <a href="/cxo-ecosystem-index/">Explore the index</a>
+              <a href="https://github.com/OpenFutureForum/cxo-ecosystem-index">View repository</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-top"><span class="number">02</span><span class="badge">Public website</span></div>
+            <h3>Executive Communities Index</h3>
+            <p>A transparent directory for comparing executive communities by role, format, geography and participation model.</p>
+            <div class="card-links">
+              <a href="/executive-communities-index/">Explore the index</a>
+              <a href="https://github.com/OpenFutureForum/executive-communities-index">View repository</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-top"><span class="number">03</span><span class="badge">Public website</span></div>
+            <h3>Executive Community Playbook</h3>
+            <p>Practical guidance, governance principles and working templates for building trusted executive communities.</p>
+            <div class="card-links">
+              <a href="/executive-community-playbook/">Read the playbook</a>
+              <a href="https://github.com/OpenFutureForum/executive-community-playbook">View repository</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-top"><span class="number">04</span><span class="badge">Public research library</span></div>
+            <h3>Executive AI Research</h3>
+            <p>Role-specific reports, datasets and evidence on how executives, investors and operators are approaching AI.</p>
+            <div class="card-links">
+              <a href="/executive-ai-research/">Browse the library</a>
+              <a href="https://openfutureforum.com/research/">Canonical reports</a>
+              <a href="https://github.com/OpenFutureForum/executive-ai-research">View repository</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-top"><span class="number">05</span><span class="badge source">Repository</span></div>
+            <h3>Executive Intelligence Index</h3>
+            <p>A cited map of the books, people, research, ideas, evidence and media shaping executive decision-making.</p>
+            <div class="card-links">
+              <a href="https://github.com/OpenFutureForum/executive-intelligence-index">Explore the repository</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="principles" aria-labelledby="principles-heading">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Publishing principles</p>
+          <h2 id="principles-heading">Open by design</h2>
+          <p>These projects are built to be inspected, challenged and improved.</p>
+        </div>
+        <div class="principle-grid">
+          <div>
+            <h3>Traceable</h3>
+            <p>Sources, methods and limitations are published alongside substantive findings.</p>
+          </div>
+          <div>
+            <h3>Practical</h3>
+            <p>Research is organized around decisions executives and community leaders actually face.</p>
+          </div>
+          <div>
+            <h3>Correctable</h3>
+            <p>Public repositories create a visible path for review, corrections and future releases.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="repositories" aria-labelledby="repositories-heading">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Complete directory</p>
+          <h2 id="repositories-heading">OpenFutureForum repositories</h2>
+          <p>All public repositories in the OpenFutureForum GitHub organization are listed here, including the organization-profile and homepage sources.</p>
+        </div>
+        <ul class="repo-list">
+          <li><strong>executive-ai-research</strong><span>Executive AI reports, datasets and source material</span><a href="https://github.com/OpenFutureForum/executive-ai-research">GitHub</a></li>
+          <li><strong>cxo-ecosystem-index</strong><span>C-suite ecosystem data and market maps</span><a href="https://github.com/OpenFutureForum/cxo-ecosystem-index">GitHub</a></li>
+          <li><strong>executive-communities-index</strong><span>Executive-community directory and comparison data</span><a href="https://github.com/OpenFutureForum/executive-communities-index">GitHub</a></li>
+          <li><strong>executive-community-playbook</strong><span>Guidance and templates for executive-community builders</span><a href="https://github.com/OpenFutureForum/executive-community-playbook">GitHub</a></li>
+          <li><strong>executive-intelligence-index</strong><span>Cited executive-intelligence research framework</span><a href="https://github.com/OpenFutureForum/executive-intelligence-index">GitHub</a></li>
+          <li><strong>OpenFutureForum.github.io</strong><span>Source for this public research directory</span><a href="https://github.com/OpenFutureForum/OpenFutureForum.github.io">GitHub</a></li>
+          <li><strong>.github</strong><span>Organization profile and shared GitHub information</span><a href="https://github.com/OpenFutureForum/.github">GitHub</a></li>
+        </ul>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <p>Open Future Forum · Executive research and community resources</p>
+      <p><a href="https://openfutureforum.com/">openfutureforum.com</a> · <a href="https://github.com/OpenFutureForum">GitHub</a></p>
+    </div>
+  </footer>
 </body>
 </html>
