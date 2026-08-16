@@ -49,7 +49,8 @@
       "id": "executive-intelligence-index",
       "name": "Executive Intelligence Index",
       "type": "research framework",
-      "status": "repository only",
+      "status": "public overview",
+      "public_url": "https://openfutureforum.github.io/executive-intelligence-index/",
       "repository_url": "https://github.com/OpenFutureForum/executive-intelligence-index",
       "description": "A cited map of the books, people, research, ideas, evidence and media shaping executive decision-making."
     }
