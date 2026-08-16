@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "publisher": {
+    "name": "Open Future Forum",
+    "url": "https://openfutureforum.com/",
+    "github_organization": "https://github.com/OpenFutureForum"
+  },
+  "directory_url": "https://openfutureforum.github.io/",
+  "last_reviewed": "2026-08-16",
+  "projects": [
+    {
+      "id": "cxo-ecosystem-index",
+      "name": "CXO Ecosystem Index",
+      "type": "open index",
+      "status": "public",
+      "public_url": "https://openfutureforum.github.io/cxo-ecosystem-index/",
+      "repository_url": "https://github.com/OpenFutureForum/cxo-ecosystem-index",
+      "description": "A structured view of companies, communities, advisors and resources serving leaders across the C-suite."
+    },
+    {
+      "id": "executive-communities-index",
+      "name": "Executive Communities Index",
+      "type": "open index",
+      "status": "public",
+      "public_url": "https://openfutureforum.github.io/executive-communities-index/",
+      "repository_url": "https://github.com/OpenFutureForum/executive-communities-index",
+      "description": "A transparent directory for comparing executive communities by role, format, geography and participation model."
+    },
+    {
+      "id": "executive-community-playbook",
+      "name": "Executive Community Playbook",
+      "type": "practical guidance",
+      "status": "public",
+      "public_url": "https://openfutureforum.github.io/executive-community-playbook/",
+      "repository_url": "https://github.com/OpenFutureForum/executive-community-playbook",
+      "description": "Practical guidance, governance principles and working templates for building trusted executive communities."
+    },
+    {
+      "id": "executive-ai-research",
+      "name": "Executive AI Research",
+      "type": "research library",
+      "status": "public",
+      "public_url": "https://openfutureforum.github.io/executive-ai-research/",
+      "canonical_publication_url": "https://openfutureforum.com/research/",
+      "repository_url": "https://github.com/OpenFutureForum/executive-ai-research",
+      "description": "Role-specific reports, datasets and evidence on how executives, investors and operators are approaching AI."
+    },
+    {
+      "id": "executive-intelligence-index",
+      "name": "Executive Intelligence Index",
+      "type": "research framework",
+      "status": "repository only",
+      "repository_url": "https://github.com/OpenFutureForum/executive-intelligence-index",
+      "description": "A cited map of the books, people, research, ideas, evidence and media shaping executive decision-making."
+    }
+  ]
+}

@@ -6,8 +6,54 @@
   <meta name="google-site-verification" content="5psM2cP_edBLrQk06yRjOZQbfEOt4QIpe4GjxoWLhUU">
   <meta name="description" content="Open Future Forum publishes executive research, open datasets, market maps, and practical resources for leaders and executive communities.">
   <meta name="theme-color" content="#101828">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Open Future Forum">
+  <meta property="og:title" content="Open Future Forum Research and Resources">
+  <meta property="og:description" content="Executive research, open datasets, market maps and practical resources from Open Future Forum.">
+  <meta property="og:url" content="https://openfutureforum.github.io/">
+  <meta name="twitter:card" content="summary">
   <link rel="canonical" href="https://openfutureforum.github.io/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" href="/projects.json" type="application/json" title="Open Future Forum project directory">
   <title>Open Future Forum Research and Resources</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://openfutureforum.com/#organization",
+        "name": "Open Future Forum",
+        "url": "https://openfutureforum.com/",
+        "sameAs": [
+          "https://github.com/OpenFutureForum",
+          "https://openfutureforum.github.io/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://openfutureforum.github.io/#website",
+        "name": "Open Future Forum Research and Resources",
+        "url": "https://openfutureforum.github.io/",
+        "description": "Executive research, open datasets, market maps and practical resources from Open Future Forum.",
+        "publisher": { "@id": "https://openfutureforum.com/#organization" }
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://openfutureforum.github.io/#collection",
+        "url": "https://openfutureforum.github.io/",
+        "name": "Open Future Forum public research directory",
+        "isPartOf": { "@id": "https://openfutureforum.github.io/#website" },
+        "about": [
+          "Executive leadership",
+          "Executive communities",
+          "Enterprise artificial intelligence",
+          "CXO ecosystems"
+        ]
+      }
+    ]
+  }
+  </script>
   <style>
     :root {
       color-scheme: light;
@@ -248,6 +294,22 @@
     .principle-grid h3 { margin: 0 0 10px; font-size: 1.15rem; }
     .principle-grid p { margin: 0; color: #d0d5dd; }
 
+    .system-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .system-step {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--soft);
+    }
+
+    .system-step h3 { margin: 0 0 10px; font-size: 1.2rem; }
+    .system-step p { margin: 0; color: var(--muted); }
+
     .repo-list {
       margin: 0;
       padding: 0;
@@ -290,7 +352,7 @@
       .nav-links { align-items: flex-end; flex-direction: column; gap: 6px; }
       .hero { padding: 64px 0 56px; }
       section { padding: 56px 0; }
-      .cards, .principle-grid { grid-template-columns: 1fr; }
+      .cards, .principle-grid, .system-grid { grid-template-columns: 1fr; }
       .repo-list li { grid-template-columns: 1fr; gap: 6px; }
       .card { min-height: 0; }
     }
@@ -306,6 +368,7 @@
     <div class="wrap nav">
       <a class="brand" href="/">Open Future Forum</a>
       <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#how-it-works">How it works</a>
         <a href="#projects">Research and resources</a>
         <a href="#repositories">Repository directory</a>
         <a href="https://openfutureforum.com/">OpenFutureForum.com</a>
@@ -322,6 +385,30 @@
         <div class="hero-actions">
           <a class="button primary" href="#projects">Explore the projects</a>
           <a class="button" href="https://github.com/OpenFutureForum">View the GitHub organization</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" aria-labelledby="system-heading">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">One connected research system</p>
+          <h2 id="system-heading">Read the answer. Check the evidence.</h2>
+          <p>Open Future Forum separates public reading, canonical publication and source verification so that each resource has a clear role.</p>
+        </div>
+        <div class="system-grid">
+          <div class="system-step">
+            <h3>Public reading</h3>
+            <p>Human-readable project sites organize research, indexes and practical guidance around executive decisions.</p>
+          </div>
+          <div class="system-step">
+            <h3>Canonical publication</h3>
+            <p>Where a report has an official publication page, that page remains the source of record and is linked explicitly.</p>
+          </div>
+          <div class="system-step">
+            <h3>Open verification</h3>
+            <p>GitHub repositories expose methods, source trails, data, release history and correction paths where available.</p>
+          </div>
         </div>
       </div>
     </section>
