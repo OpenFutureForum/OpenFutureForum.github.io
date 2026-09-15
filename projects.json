@@ -3,10 +3,12 @@
   "publisher": {
     "name": "Open Future Forum",
     "url": "https://openfutureforum.com/",
-    "github_organization": "https://github.com/OpenFutureForum"
+    "github_organization": "https://github.com/OpenFutureForum",
+    "huggingface_organization": "https://huggingface.co/open-future-forum",
+    "huggingface_dataset": "https://huggingface.co/datasets/open-future-forum/executive-event-taxonomy"
   },
   "directory_url": "https://openfutureforum.github.io/",
-  "last_reviewed": "2026-08-16",
+  "last_reviewed": "2026-09-14",
   "projects": [
     {
       "id": "cxo-ecosystem-index",
