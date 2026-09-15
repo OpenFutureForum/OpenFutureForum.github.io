@@ -76,7 +76,7 @@ def main() -> None:
 
     directory = json.loads((ROOT / "projects.json").read_text(encoding="utf-8"))
     projects = directory.get("projects", [])
-    assert len(projects) == 5, f"Expected 5 substantive projects, found {len(projects)}"
+    assert len(projects) == 7, f"Expected 7 substantive projects, found {len(projects)}"
     ids = [project["id"] for project in projects]
     assert len(ids) == len(set(ids)), "Duplicate project IDs found"
     for project in projects:

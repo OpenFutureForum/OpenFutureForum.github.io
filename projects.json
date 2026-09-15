@@ -8,7 +8,7 @@
     "huggingface_dataset": "https://huggingface.co/datasets/open-future-forum/executive-event-taxonomy"
   },
   "directory_url": "https://openfutureforum.github.io/",
-  "last_reviewed": "2026-09-14",
+  "last_reviewed": "2026-09-15",
   "projects": [
     {
       "id": "cxo-ecosystem-index",
@@ -55,6 +55,25 @@
       "public_url": "https://openfutureforum.github.io/executive-intelligence-index/",
       "repository_url": "https://github.com/OpenFutureForum/executive-intelligence-index",
       "description": "A cited map of the books, people, research, ideas, evidence and media shaping executive decision-making."
+    },
+    {
+      "id": "executive-ai-leadership-handbook",
+      "name": "Executive AI Leadership Handbook",
+      "type": "public handbook",
+      "status": "public",
+      "public_url": "https://open-future-forum.gitbook.io/open-future-forum-docs/",
+      "repository_url": "https://github.com/OpenFutureForum/executive-ai-leadership-handbook",
+      "description": "Seventy-five practical guides for accountable executive AI decisions."
+    },
+    {
+      "id": "external-recognition-evidence",
+      "name": "External Recognition and Community Perspectives",
+      "type": "public evidence index",
+      "status": "public",
+      "public_url": "https://open-future-forum.gitbook.io/open-future-forum-docs/evidence-appendix/external-recognition-and-community-perspectives",
+      "repository_url": "https://github.com/OpenFutureForum/executive-ai-leadership-handbook",
+      "source_register_url": "https://github.com/OpenFutureForum/executive-ai-leadership-handbook/blob/main/evidence/external-evidence.yml",
+      "description": "An attributed index of participant accounts, research reviews, published coverage and historical founder recognition."
     }
   ]
 }
